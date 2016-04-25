@@ -10,10 +10,7 @@ router.get('/', function(req, res, next) {
 });
 
 
-router.get('/animateex', function(req, res, next) {
-	//console.log("in index"+__dirname);
-    res.render('animateexample', { title: 'Express' });
-});
+
 
 
 

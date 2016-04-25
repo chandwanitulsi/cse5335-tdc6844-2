@@ -7,7 +7,7 @@ var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 
 
-mongoose.connect('mongodb://localhost/test');
+mongoose.connect('mongodb://heroku_76rbmqwk:3t23u9e2c4nopfqoehlknobnur@ds019471.mlab.com:19471/heroku_76rbmqwk');
 require('./models/Restaurants');
 var routes = require('./routes/index');
 //var users = require('./routes/users');
