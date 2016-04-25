@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html ng-app="restaurantsDemo">
+  <head>
+    <title>Express</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <script type="text/javascript" src="/javascripts/angular.min.js"></script>
+    <script type="text/javascript" src="/javascripts/angularController.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.js"></script>
+    
+  <style type="text/css">
+  .slide-animation-setup {
+    -webkit-transition: 0.5s linear all;
+    -moz-transition: 0.5s linear all;
+    -ms-transition: 0.5s linear all;
+    -o-transition: 0.5s linear all;
+    transition: 0.5s linear all;
+    position: relative;
+    left:100;
+    opacity: 0;
+}
+.slide-animation-setup.repeat-enter-start {
+    left: 0;
+    opacity:1;
+}
+
+.example-animate-container {
+  background:white;
+  border:1px solid black;
+  list-style:none;
+  margin:0;
+  padding:0 10px;
+}
+
+.animate-repeat {
+  line-height:30px;
+  list-style:none;
+  box-sizing:border-box;
+}
+
+.animate-repeat.ng-move,
+.animate-repeat.ng-enter,
+.animate-repeat.ng-leave {
+  transition:all linear 0.5s;
+}
+
+.animate-repeat.ng-leave.ng-leave-active,
+.animate-repeat.ng-move,
+.animate-repeat.ng-enter {
+  opacity:0;
+  max-height:0;
+}
+
+.animate-repeat.ng-leave,
+.animate-repeat.ng-move.ng-move-active,
+.animate-repeat.ng-enter.ng-enter-active {
+  opacity:1;
+  max-height:30px;
+}
+
+
+  </style>
+  </head>
+  <body>
+    <h1>List of Restaurants</h1>
+    
+    <div ng-controller="showRestaurants">
+    	<button ng-click="getRestaurants()" class="btn btn-primary"> Show Restaurants</button>
+        <br><br>
+    	<table class="table table-bordered table-striped">
+    	<thead>
+         <th>No</th>
+         <th>name</th>
+         <th>City</th>
+         <th>Cuisine</th>   
+        </thead>
+    	<tr ng-repeat="restaurant in Restaurants | limitTo:20" class="animate-repeat">
+    		<td>{{restaurant[0].restaurant_id}}</td>
+            <td>{{restaurant[0].name}}</td>
+    		<td>{{restaurant[0].borough}}</td>
+    		<td>{{restaurant[0].cuisine}}</td>
+    		
+    	</tr>
+    	</table>
+    </div>
+    
+  </body>
+</html>
