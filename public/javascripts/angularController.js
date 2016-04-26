@@ -1,6 +1,6 @@
 var app= angular.module('restaurantsDemo',['ngAnimate']);
 app.controller('showRestaurants',function($scope,$http,$interval){
-	//alert("in showRestaurants controller");
+	alert("in showRestaurants controller");
 	$scope.Restaurants= [];
 	var i=1;
 	var j=0;
