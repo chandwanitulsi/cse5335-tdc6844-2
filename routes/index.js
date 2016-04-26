@@ -23,7 +23,8 @@ router.get('/restaurants', function(req, res, next) {
   //Restaurant.findOne().exec(function(err, post)
   Restaurant.find({"restaurant_id":req.query.restaurantNo},function(err, restaurant){
     if(err){ return next(err); }
-    console.log(restaurant[0].name+"==========");
+    console.log(restaurant);
+    console.log(restaurant.name+"==========");
     res.send(restaurant);
   });
 });
