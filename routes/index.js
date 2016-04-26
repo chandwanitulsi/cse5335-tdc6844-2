@@ -20,18 +20,13 @@ router.get('/animateex', function(req, res, next) {
 
 router.get('/restaurants', function(req, res, next) {
 	console.log("request with restaurant no"+ req.query.restaurantNo)
-  Restaurant.findOne().exec(function(err, restaurant){
-  	console.log(restaurant);
-  });
-  /*Restaurant.find({"restaurant_id":req.query.restaurantNo},function(err, restaurant){
+  //Restaurant.findOne().exec(function(err, post)
+  Restaurant.find({"restaurant_id":req.query.restaurantNo},function(err, restaurant){
     if(err){ return next(err); }
-    console.log(restaurant);
     console.log(restaurant[0].name+"==========");
     res.send(restaurant);
-  });*/
+  });
 });
-
-
 
 
 
