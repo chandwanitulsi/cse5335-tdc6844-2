@@ -29,7 +29,7 @@ app.controller('showRestaurants',function($scope,$http,$interval){
 								}
 
 	$scope.getRestaurants=function(){
-		$interval(getEachRestaurant,1000,100);
+		$interval(getEachRestaurant,500,100);
 		};
 	
 
